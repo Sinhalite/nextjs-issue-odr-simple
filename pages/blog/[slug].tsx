@@ -5,7 +5,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = [
     {
       params: {
-        slug: "test",
+        slug: "dynamic",
       },
     },
   ]
@@ -34,14 +34,14 @@ type Props = {
   }
 }
 
-const Post: NextPage<Props> = ({ data }) => {
+const Dynamic: NextPage<Props> = ({ data }) => {
   return (
     <div>
       <Link href="/">Go back</Link>
-      <h1>{data?.slug}</h1>
+      <h1>/blog/[slug].tsx with getStaticPaths</h1>
       <p>{data.now}</p>
     </div>
   )
 }
 
-export default Post
+export default Dynamic
