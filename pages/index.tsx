@@ -7,10 +7,10 @@ const Home: NextPage = () => {
       <h1>Next.js Issue #38306</h1>
       <ul>
         <li>
-          <Link href="/blog/test">Go to dynamic route</Link>
+          <Link href="/blog/dynamic">Go to dynamic route</Link>
         </li>
         <li>
-          <Link href="/blog/test">Go to static route</Link>
+          <Link href="/static">Go to static route</Link>
         </li>
       </ul>
     </div>
