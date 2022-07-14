@@ -1,5 +1,5 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next"
-import Link from "next/link"
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Link from "next/link";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = [
@@ -8,15 +8,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: "dynamic",
       },
     },
-  ]
+  ];
   return {
-    paths,
+    // paths,
     fallback: "blocking",
-  }
-}
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const now = new Date().toLocaleString()
+  const now = new Date().toLocaleString();
   return {
     props: {
       data: {
@@ -24,15 +24,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         slug: params?.slug,
       },
     },
-  }
-}
+  };
+};
 
 type Props = {
   data: {
-    now: string
-    slug?: string
-  }
-}
+    now: string;
+    slug?: string;
+  };
+};
 
 const Dynamic: NextPage<Props> = ({ data }) => {
   return (
@@ -41,7 +41,7 @@ const Dynamic: NextPage<Props> = ({ data }) => {
       <h1>/blog/[slug].tsx with getStaticPaths</h1>
       <p>{data.now}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Dynamic
+export default Dynamic;
