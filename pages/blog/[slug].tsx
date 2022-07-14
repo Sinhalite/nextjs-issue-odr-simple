@@ -2,15 +2,8 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = [
-    {
-      params: {
-        slug: "dynamic",
-      },
-    },
-  ];
   return {
-    // paths,
+    paths: [],
     fallback: "blocking",
   };
 };
